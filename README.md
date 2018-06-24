@@ -32,7 +32,7 @@ Deployment on Heroku.
 |Build tabels|In progress|
 |Connect to Node|Not yet started|
 
-### Contributer
+### Contributors
 |Name|Role|Location|Timezone|
 | ------ | ------ | ------ | ------ |
 |Zoey| PM / Frontend dev | Iran| UTC 4.30|
