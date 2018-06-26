@@ -1,0 +1,24 @@
+.category{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+}
+.sidebar-header{
+    padding: 10px;
+    box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.category-list{
+    
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.7);
+    list-style: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+.category-list li{
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
