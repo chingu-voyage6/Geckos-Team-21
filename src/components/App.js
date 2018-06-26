@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
-import Header from "./Header.js";
+import Header from "./header/Header.js";
+import Main from "./main/Main";
 import "./App.css";
 
 class App extends Component{
@@ -8,6 +9,7 @@ class App extends Component{
     return(
       <div className="App">
         <Header />
+        <Main />
         
       </div>
     );
