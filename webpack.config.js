@@ -25,9 +25,9 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: path.join(__dirname, "views/"),
-    port: 4000,
-    publicPath: "http://localhost:4000/dist/",
+    contentBase: path.join(__dirname, "app/views/"),
+    port: 3000,
+    publicPath: "http://localhost:3000/dist/",
     hotOnly: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
