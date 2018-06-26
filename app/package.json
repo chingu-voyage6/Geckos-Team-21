@@ -31,11 +31,8 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "express": "^4.16.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.3"
   }
-}  
-  
-  
+}
