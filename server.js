@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 
-app.use('/src', express.static(__dirname + '/src'));
+app.use('/app/src', express.static(__dirname + '/app/src'));
 
 app.get('/', function(req,res) {
 	res.sendFile(__dirname + "/app/views/index.html");
