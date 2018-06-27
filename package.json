@@ -1,0 +1,27 @@
+{
+  "name": "geckos-team-21",
+  "version": "1.0.0",
+  "description": "Add-project-description-here | Chingu Voyage-6 | https://chingu.io/",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "app": "cd app && npm start",
+    "start": "concurrently \"npm run server\" \"npm run app\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chingu-voyage6/Geckos-Team-21.git"
+  },
+  "author": "Geckos-Team-21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chingu-voyage6/Geckos-Team-21/issues"
+  },
+  "homepage": "https://github.com/chingu-voyage6/Geckos-Team-21#readme",
+  "dependencies": {
+    "concurrently": "^3.6.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5"
+  }
+}

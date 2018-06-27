@@ -1,14 +1,16 @@
+var db = require('./db-connect.js')
 var express = require('express');
 var app = express();
+ 
 
 
-app.use('/app/src', express.static(__dirname + '/app/src'));
+
 
 app.get('/', function(req,res) {
-	res.sendFile(__dirname + "/app/views/index.html");
+	res.send({ "username": "Sergey" });
 })
 
-var port = "8080"
+var port = process.env.PORT || "5000";
 app.listen(port, function() {
 	console.log("server listening on port " + port);
 });
