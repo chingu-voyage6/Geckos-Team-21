@@ -2,31 +2,41 @@
 .Header{
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 350px;
     color: #fff;
     background-color: rgb(54, 53, 53);
 }
 .Navbar{
-    padding:20px;
-}
-.Navbar ul{
+    padding:10px 20px;
     display:flex;
     flex-direction: row;
     align-items: center;
 }
-.Navbar li {
-    list-style: none;
-    display: inline;
-    margin:0 15px;
-}
-.Navbar li:first-of-type{
-    margin-right: auto;
-}
-.Navbar li a{
+
+.Navbar a{
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
+    padding: 15px;
+    margin: 8px;
+    transition: all 0.2s;
+}
+.Navbar a:hover{
+    opacity: 0.7;
+}
+.Navbar a:first-of-type{
+    border: 2px solid firebrick;
+    border-radius: 4px;
+}
+.Navbar a:nth-of-type(2){
+    margin-right: auto;
+    background-color: firebrick;
+    border: 2px solid firebrick;
+    border-radius: 4px;
+}
+.banner{
+    border: 1px solid red;
 }
 .PinkCircle{
     position: absolute;
@@ -37,7 +47,7 @@
     border-radius: 50%;
 }
 .BlueCircle{
-    osition: absolute;
+    position: absolute;
     left: 30px;
     width: 70px;
     height: 70px;
@@ -45,14 +55,15 @@
     border-radius: 50%;
 }
 .YellowCircle{
-    osition: absolute;
-    left: 50px;
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
     width: 30px;
     height: 30px;
     background-color: rgb(188, 216, 112);
     border-radius: 50%;
 }
-.Header h1{
+.banner h1{
     display: inline-block;
     margin: auto;
 }
