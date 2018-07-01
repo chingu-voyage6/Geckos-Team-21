@@ -14,6 +14,9 @@ const Motto = () => {
 
 class Main extends Component{
     render(){
+        const itemTitle = "title!!!!";
+        const src ="#";
+        const itemDetails = "details";
         return(
             <div>
                 <Motto />
@@ -22,7 +25,10 @@ class Main extends Component{
                         <Category />
                     </div>
                     <div className="items-block">
-                        <ItemsBlock />
+                        <ItemsBlock
+                          itemTitle={itemTitle}
+                          src={src}
+                          itemDetails={itemDetails}/>
                     </div>
                     
                 </div>
