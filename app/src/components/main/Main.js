@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
 import Category from "./sidebar/Category.js";
+import ItemsBlock from "./items-block/Items-block.js";
 import './Main.css';
 
 const Motto = () => {
@@ -10,13 +11,20 @@ const Motto = () => {
         </div>
     );
 }
+
 class Main extends Component{
     render(){
         return(
             <div>
                 <Motto />
                 <div className="main-content">
-                    <Category />
+                    <div className="sidebar">
+                        <Category />
+                    </div>
+                    <div className="items-block">
+                        <ItemsBlock />
+                    </div>
+                    
                 </div>
                
             </div>

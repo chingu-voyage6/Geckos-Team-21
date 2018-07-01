@@ -16,6 +16,10 @@
     font-family: 'Aclonica', sans-serif;
 }
 .main-content{
-   padding: 20px;    
+   padding: 20px;
+   display: flex;    
+}
+.items-block{
+    padding: 15px 20px;
 }
 
