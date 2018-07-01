@@ -1,0 +1,36 @@
+.banner{
+    position: relative;
+    height: 250px;
+    color: #fff;
+    background-color: rgb(54, 53, 53);
+}
+
+.PinkCircle{
+    position: absolute;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: palevioletred;
+    border-radius: 50%;
+}
+.BlueCircle{
+    position: absolute;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.YellowCircle{
+    position: absolute;
+    left: 80px;
+    bottom: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(188, 216, 112);
+    border-radius: 50%;
+}
+.banner h1{
+    display: inline-block;
+    margin: auto;
+}
