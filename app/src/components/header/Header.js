@@ -6,10 +6,15 @@ import Banner from "./Banner";
 
 
 class Header extends Component{
+constructor(props) {
+  	super(props);  	
+  	}    
+ 
+
     render(){
         return(
           <div className="Header">
-            <Navbar />
+            <Navbar user={this.props.username} />
             <Banner />
           </div>
         );

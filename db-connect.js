@@ -1,15 +1,21 @@
 
-/*
-there should be implemented connection to database. Something like that
 var mysql      = require('mysql');
+
+console.log('Start working');
+
 var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'me',
-  password : 'secret',
-  database : 'my_db'
+  host         : 'localhost',
+  port         : 3306,
+  user         : 'root',
+  password     : 'password',
+  insecureAuth : true,
+  database     : 'giveaway', 
 });
+
 
 
 module.exports = connection;
 
-*/
+
+
+
