@@ -8,11 +8,11 @@ class Navbar extends Component{
         const pages = ['login','post an ad', 'categories', 'about', 'home'];
         const navLinks = pages.map((page) => {
             return(
-                <a href="#">{page}</a>
+                <a key={page} href="#">{page}</a>
             )
         });
         return(
-            <div class="Navbar">
+            <div className="Navbar">
             {navLinks}
             </div>
         )
