@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
-import './Items-block.css';
 
 class ItemsBlock extends Component {
     constructor(props){

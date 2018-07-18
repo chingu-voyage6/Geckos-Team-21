@@ -1,6 +1,5 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
-import "./Header.css";
 import Navbar from "./Navbar";
 import Banner from "./Banner";
 

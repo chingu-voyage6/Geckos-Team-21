@@ -2,7 +2,6 @@ import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
 import Category from "./sidebar/Category.js";
 import ItemsBlock from "./items-block/Items-block.js";
-import './Main.css';
 
 const Motto = () => {
     return(
