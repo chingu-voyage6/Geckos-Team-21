@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
-import './Category.css';
 
 class Category extends Component{
     render(){

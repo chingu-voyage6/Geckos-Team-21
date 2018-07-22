@@ -2,37 +2,32 @@
   "name": "geckos-team-21",
   "version": "1.0.0",
   "description": "Add-project-description-here | Chingu Voyage-6 | https://chingu.io/",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode development"
+    "server": "nodemon server.js",
+    "app": "cd app && npm start",
+    "start": "concurrently \"npm run server\" \"npm run app\"",
+    "heroku-postbuild": "cd app && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chingu-voyage6/Geckos-Team-21.git"
   },
-  "author": "",
+  "author": "Geckos-Team-21",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chingu-voyage6/Geckos-Team-21/issues"
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-21#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
-  },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-hot-loader": "^4.3.3"
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
