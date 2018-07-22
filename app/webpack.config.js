@@ -27,11 +27,6 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: path.join(__dirname, "views/"),
-<<<<<<< HEAD:webpack.config.js
-    port: 8081,
-    publicPath: "http://localhost:8081/dist/",
-    hotOnly: true
-=======
     port: process.env.PORT || 3000,
     publicPath: "http://localhost:3000/dist/",
     hotOnly: true,
@@ -41,7 +36,6 @@ module.exports = {
       secure: false
   }
     }   
->>>>>>> 26d58053a16b78a150b41741de98b6dbebd98ed4:app/webpack.config.js
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
