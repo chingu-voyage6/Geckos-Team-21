@@ -9,16 +9,14 @@
     border-bottom: 3px solid #ddd;
     font-weight: bold;
 }
-.category-list{
-    
+.category-list {
     display: flex;
     flex-direction: column;
     list-style: none;
     cursor: pointer;
-    z-index: 1000;
-}
-.category-list li{
-    display: block;
-    padding: 15px 25px;
-    border-bottom:1px solid #ddd;
+    li{
+        display: block;
+        padding: 15px 25px;
+        border-bottom:1px solid #ddd;
+    }
 }
