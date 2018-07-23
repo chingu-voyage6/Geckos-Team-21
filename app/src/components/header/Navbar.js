@@ -12,8 +12,12 @@ class Navbar extends Component{
     render(){
 
         let pages = [['login', '/login'], ['Sign up', '/register'], ['post an ad', '#'], ['categories', '#'], ['about', '#'], ['home', '#']];
-        if (this.props.user !== 'Noname') {
+        if (this.props.user !== '') {
             pages[0][0] = "Hello " + this.props.user;
+            pages[0][1] = "#";
+            pages[1][0] = "Add item";
+            pages[1][1] = "/addNewItem";
+
         }
         const navLinks = pages.map((page) => {
             return(
@@ -23,9 +27,10 @@ class Navbar extends Component{
 
         return(
             <div className="Navbar">
-            {navLinks}            
+            { navLinks }            
             </div>
         )
     }
 }
+
 export default hot(module)(Navbar);
