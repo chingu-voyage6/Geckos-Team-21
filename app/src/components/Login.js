@@ -10,9 +10,9 @@ class Login extends Component{
     return(
         <div className="Login">        
           <form method="POST" action="/api/login">			
-            <label for="email">Email:</label>
+            <label for="e">Email:</label>
             <input type="email" name="email" id="e" /><br />			
-            <label for="password">Password:</label>
+            <label for="pass">Password:</label>
             <input type="password" name="password" id="pass" /><br />
             <input type="submit" value="Login" id="login" />
           </form>  
