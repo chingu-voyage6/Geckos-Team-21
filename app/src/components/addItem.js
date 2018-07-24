@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
-import "./Register.css";
+
 
 class addItem extends Component{
   constructor(props) {
