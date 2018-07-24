@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
+import ItemsFilters from './ItemsFilters';
 
 class ItemsBlock extends Component {
     constructor(props){
@@ -8,6 +9,7 @@ class ItemsBlock extends Component {
     render(){
         return(
             <div>
+                <ItemsFilters />
                 <section className="item-card">
                     <h1>{this.props.itemTitle}</h1>
                     <img src={this.props.src} alt="" />
