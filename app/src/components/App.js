@@ -8,7 +8,7 @@ class App extends Component{
   constructor(props) {
   	super(props);
   	this.state = {
-  		username: 'Noname'
+  		username: ''
   	}
     
   }
@@ -16,13 +16,16 @@ class App extends Component{
  
 
    componentDidMount(){
-    return fetch('/api/user')
-      .then((response) => response.json())
-      .then((responseJson) => { 
-        console.log(responseJson.username);
+    return fetch('/api/user', {credentials: "include"})
+      .then( function(response) {
+        return response.json();
+      })
+      .then((responseJson) => {        
+        if (responseJson) {
         this.setState({
           username: responseJson.username,
         });
+      }
 
       })
       .catch((error) =>{
