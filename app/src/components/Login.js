@@ -8,11 +8,12 @@ class Login extends Component{
   
   render(){
     return(
-        <div className="Login">        
+        <div className="form">
+          <h1>Login form</h1>        
           <form method="POST" action="/api/login">			
-            <label for="e">Email:</label>
+            <label htmlFor="e">Email:</label>
             <input type="email" name="email" id="e" /><br />			
-            <label for="pass">Password:</label>
+            <label htmlFor="pass">Password:</label>
             <input type="password" name="password" id="pass" /><br />
             <input type="submit" value="Login" id="login" />
           </form>  
