@@ -12,6 +12,6 @@ ReactDOM.render(<BrowserRouter>
 	<div>
 	<Route exact path="/" component={App} />
 	<Route exact path="/register" component={Register} />
-	<Route exact path="/" component={Login} />
+	<Route exact path="/login" component={Login} />
 	</div>
 	</BrowserRouter>,document.getElementById("root"));

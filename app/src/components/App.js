@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import {hot} from "react-hot-loader";
 import Header from "./header/Header.js";
 import Footer from "./footer/Footer.js";
+import Main from "./main/Main.js";
 
 class App extends Component{
   constructor(props) {
