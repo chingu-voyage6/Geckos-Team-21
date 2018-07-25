@@ -10,7 +10,7 @@ class Navbar extends Component{
 
     render(){
 
-        let pages = [['login', '/login'], ['Sign up', '/register'], ['post an ad', '#'], ['categories', '#'], ['about', '#'], ['home', '#']];
+        let pages = [['login', '/login'], ['Sign up', '/register'], ['post an ad', '/addNewItem'], ['categories', '#'], ['about', '#'], ['home', '#']];
         if (this.props.user !== '') {
             pages[0][0] = "Hello " + this.props.user;
             pages[0][1] = "#";
