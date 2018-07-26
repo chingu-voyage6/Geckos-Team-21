@@ -13,8 +13,6 @@ class App extends Component{
     
   }
 
- 
-
    componentDidMount(){
     return fetch('/api/user', {credentials: "include"})
       .then( function(response) {
@@ -33,7 +31,6 @@ class App extends Component{
       });
   }
  
-
   render(){
     return(
       <div className="App">        

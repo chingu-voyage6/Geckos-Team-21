@@ -1,7 +1,14 @@
+.items-block{
+ border: 1px solid red;
+}
+.items-list{
+    display: flex;
+}
 .item-card{
     width: 200px;
     height: 200px;
-    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.7); */
+    padding: 10px;
+    margin: 10px;
     border: 1px solid #ddd;
     transition: all 0.2s;
 }

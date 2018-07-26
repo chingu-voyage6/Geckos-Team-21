@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import {hot} from "react-hot-loader";
 import ItemsFilters from './ItemsFilters';
+import ItemsList from './ItemsList';
 
 class ItemsBlock extends Component {
     constructor(props){
@@ -10,11 +11,7 @@ class ItemsBlock extends Component {
         return(
             <div>
                 <ItemsFilters />
-                <section className="item-card">
-                    <h1>{this.props.itemTitle}</h1>
-                    <img src={this.props.src} alt="" />
-                    <p>{this.props.itemDetails}</p>
-                </section>
+                <ItemsList />
             </div>
         )
     }

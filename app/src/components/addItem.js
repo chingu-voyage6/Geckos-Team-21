@@ -1,8 +1,9 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
+import { connect } from "react-redux";
+import {addItem} from '../actions/items';
 
-
-class addItem extends Component{
+class addNewItem extends Component{
   constructor(props) {
 		super(props); 
 		this.state={
@@ -16,14 +17,22 @@ class addItem extends Component{
 			tel :''
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-	handleInputChange(e){
+  handleInputChange(e){
 		const target = e.target
 		this.setState(() => ({
 			[target.name] : target.value
 		}));
   }
+
+  handleSubmit(e){
+	e.preventDefault();
+	this.props.dispatch(addItem({...this.state}));
+	this.props.history.push('/');
+  }
+
   render(){
   	let categories = ["Games", "Movies", "Books", "Magazines", "Clothes", "Food", "Furniture", "Bikes", "Weird things"];
   	const selectFields = categories.map(function(cat) {
@@ -32,7 +41,8 @@ class addItem extends Component{
     return(
       <div className="form">  
 				<h1>add a new item</h1>      
-				<form encType="multipart/form-data"  method="POST" action="/api/addItem">
+				<form encType="multipart/form-data"  method="POST" action="/api/addItem"
+				onSubmit={this.handleSubmit}>
 				
 					<label htmlFor="title">Title:</label>
 					<input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange} />
@@ -73,4 +83,4 @@ class addItem extends Component{
   }
 }
 
-export default hot(module)(addItem);
+export default connect()(addNewItem);
