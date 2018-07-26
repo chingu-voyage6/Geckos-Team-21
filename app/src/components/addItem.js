@@ -36,7 +36,7 @@ class addNewItem extends Component{
   render(){
   	let categories = ["Games", "Movies", "Books", "Magazines", "Clothes", "Food", "Furniture", "Bikes", "Weird things"];
   	const selectFields = categories.map(function(cat) {
-  		return (<option key={categories.indexOf(cat)} value={cat}>{cat}</option>)
+  		return (<option key={categories.indexOf(cat)} value={cat.toLowerCase()}>{cat}</option>)
   	})
     return(
       <div className="form">  
