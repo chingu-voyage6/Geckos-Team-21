@@ -17,9 +17,10 @@
 }
 .main-content{
    padding: 20px;
-   display: flex;    
+   display: flex;     
 }
 .items-block{
     padding: 15px 20px;
+    flex-grow: 1;
 }
 

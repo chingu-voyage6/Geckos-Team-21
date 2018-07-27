@@ -14,9 +14,11 @@
     flex-direction: column;
     list-style: none;
     cursor: pointer;
-    li{
+    button{
         display: block;
         padding: 15px 25px;
         border-bottom:1px solid #ddd;
+        background-color: #fff;
+        cursor: pointer;
     }
 }
