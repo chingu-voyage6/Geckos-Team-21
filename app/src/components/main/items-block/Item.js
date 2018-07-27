@@ -1,10 +1,11 @@
 import React from 'react';
+import img from './file.jpg';
 
-const Item = ({title, price}) => (
+const Item = ({title, price, photo}) => (
     <div className="item-card">
         <h1>{title}</h1>
-        {/* <img src={props.pic} alt="" /> */}
-        <p>{price}</p>
+         <img src={img} alt="" /> 
+        <p>Price: {price} <a className="item-link" href="#">details</a></p>
     </div>
 );
 

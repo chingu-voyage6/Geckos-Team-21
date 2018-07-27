@@ -14,6 +14,8 @@ const store = configureStore();
 store.dispatch(addItem({title: 'rug', price: 100, category: 'furniture'}));
 store.dispatch(addItem({title: 'lamp', price: 300, category: 'furniture'}));
 store.dispatch(addItem({title: 'spagetti', price: 200, category: 'food'}));
+store.dispatch(addItem({title: 'an old movie', price: 600, category: 'movies'}));
+store.dispatch(addItem({title: 'an old bike', price: 800, category: 'bikes'}));
 
 
 const state = store.getState();
