@@ -2,7 +2,7 @@
 
 const getVisibleItems = (items, {category, text, sortBy }) => {
     return items.filter((item) => {
-        const categoryMatch =  category !== ''? item.category === category: true;
+        const categoryMatch =  category !== ''? item.category.toLowerCase() === category.toLowerCase(): true;
         const textMatch = item.title.toLowerCase().includes(text.toLowerCase()) 
         // ||  item.description.toLowerCase().includes(text.toLowerCase())  
         ;
