@@ -12,19 +12,18 @@ connection.connect(function(err) {
 		 ' city varchar(30),' + 
 		 ' password varchar(30),' + 
 		 ' tel BIGINT,' + 
-		 ' email unique varchar(90))', 
+		 ' email varchar(90))', 
 		 function(err, result) {
 			if (err) {
 				console.log('Error to create Table users: ' + err);
 			} else {
-			console.log('Table users created');
-			connection.end();
+			console.log('Table users created');			
 		}
 		});
 
 		connection.query('CREATE TABLE IF NOT EXISTS items' +
-		 '(id INT primary key auto_increment,' + 
-		 '(userId INT,' + 
+		 '(itemId INT primary key auto_increment,' + 
+		 ' userId INT,' + 
 		 ' title varchar(30),' + 
 		 ' category varchar(30),' + 
 		 ' country varchar(30),' + 
@@ -33,14 +32,14 @@ connection.connect(function(err) {
 		 ' creationDate DATETIME,' +
 		 ' expirationDate DATE DEFAULT NULL,' + 
 		 ' tel BIGINT,' + 
-		 ' photoDir varchar(90),' +
-		 'FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE)', 
+		 ' price BIGINT,' +
+		 ' photos text,' +
+		 ' FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE)', 
 		 function(err, result) {
 			if (err) {
 				console.log('Error to create Table items: ' + err);
 			} else {
-			console.log('Table itemss created');
-			connection.end();
+			console.log('Table itemss created');			
 		}
 		});
 	}
