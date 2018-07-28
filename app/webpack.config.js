@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
+  mode: "development",  
   module: {
     rules: [
       {
@@ -15,6 +15,10 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.(gif|jpe?g|png|ico)$/,
+        loader: 'url-loader?limit=10000'
       }
     ]
   },

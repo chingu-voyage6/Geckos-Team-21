@@ -1,5 +1,8 @@
-const passport = require('passport');
+const passport      = require('passport');
 const LocalStrategy = require('passport-local');
+var multer          = require('multer');
+var path			= require('path');
+
 //const bcrypt   = require('bcrypt');
 
 function ensureAuthenticated(req, res, next) {
@@ -92,9 +95,48 @@ module.exports = function(app, db) {
 
 	// Add item -----------------------------------------------------------------------------------------------------------
 
-	app.route('/api/addItem').post(ensureAuthenticated, function(req, res) {
-		res.send("Item added");
-	})
+	app.route('/api/addItem').post(ensureAuthenticated, function(req, res) {		
+		var storage = multer.diskStorage({
+		  destination: 'app/dist/uploads/' + req.user[0].id,
+		  filename: function (req, file, cb) {
+		    cb(null, "file-" + Date.now() + path.extname(file.originalname))
+		  }
+		});
+		var upload = multer({storage: storage}).fields([{ name: 'photos', maxCount: 5 }]);
+		upload(req, res, function(err) {
+			if (err) {console.log("Error to download: " + err);}
+			else {
+				req.body.photos = JSON.stringify(req.files);
+				req.body.creationDate = new Date();
+				req.body.userID = req.user[0].id;
 
+				console.log(req.body);
+				var query = "INSERT INTO items SET ?";			
+				var values = req.body;
+
+				db.query(query, values, function(err, result) {
+				if (err) {
+				db.end();
+				return console.log('Error to insert into items: ' + err);				
+				}
+				req.session.save(function(err) {
+					if (err) {return console.log("Session not saved: " + err);}
+					return console.log("Session saved");
+				});				
+				res.redirect('/');
+				return console.log('Result: ' + result.affectedRows);
+			});
+				
+			}
+		})
+	});
+
+	app.route('/api/getItems').get(function(req,res) {
+
+		db.query('SELECT * FROM items', function(err, result, fields) {
+			console.log(result);
+			res.json(result);
+		})
+	});
 
 }
