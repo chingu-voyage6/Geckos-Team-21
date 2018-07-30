@@ -17,7 +17,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpe?g|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -25,11 +25,12 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(gif|jpe?g|png|ico)$/,
-        loader: 'url-loader?limit=10000'
       }
+      // ,
+      // {
+      //   test: /\.(gif|jpe?g|png|ico)$/,
+      //   loader: 'url-loader?limit=10000'
+      // }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
