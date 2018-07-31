@@ -2,8 +2,9 @@
 const filtersReducerDefaultState = {
     category: '',
     text: '',
-    sortBy: 'date'
-    // expDate: undefined
+    country: '',
+    city: '',
+    sortBy: 'creation-date'
 }
 
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
@@ -18,21 +19,32 @@ switch(action.type){
             ...state,
             text: action.text
         };
-    case 'SET_SORT_BY_DATE':
+    case 'SET_COUNTRY_FILTER':
+        return{
+            ...state,
+            country: action.country
+        };
+    case 'SET_CITY_FILTER': 
+        return{
+            ...state,
+            city: action.city
+        };
+    case 'SET_SORT_BY_EXPIRATION_DATE':
         return {
             ...state,
-            sortBy: 'date'
+            sortBy: 'expiration-date'
         };
     case 'SET_SORT_BY_PRICE':
         return {
             ...state,
             sortBy: 'price'
         };
-    // case 'SET_EXPIRATION_DATE':
-    //     return {
-    //         ...state,
-    //         expDate:action.expDate
-    //     };
+    case 'SET_SORT_BY_CREATION_DATE':
+        return {
+            ...state,
+            sortBy: 'creation-date'
+        };
+    
     default:
             return state; 
 }

@@ -1,18 +1,22 @@
 // get visible items
 
-const getVisibleItems = (items, {category, text, sortBy }) => {
+const getVisibleItems = (items, {category, text, country, city, sortBy }) => {
     return items.filter((item) => {
         const categoryMatch =  category !== ''? item.category.toLowerCase() === category.toLowerCase(): true;
-        const textMatch = item.title.toLowerCase().includes(text.toLowerCase()) 
+        const textMatch = item.title.toLowerCase().includes(text.toLowerCase());
+        const countryMatch = item.country.includes(country);
+        const cityMatch = item.city.includes(city);
         // ||  item.description.toLowerCase().includes(text.toLowerCase())  
         ;
         
-        return  categoryMatch && textMatch ;
+        return  categoryMatch && countryMatch && cityMatch  && textMatch ;
     }).sort((a , b) => {
-        if (sortBy === 'date'){
+        if (sortBy === 'expiration-date'){
             return a.expDate < b.expDate ? 1 : -1;
         }else if(sortBy === 'price'){
             return a.price < b.price ? 1 : -1;
+        }else if (sortBy === 'creation-date') {
+            return a.creationDate < b.creationDate ? 1 : -1;
         }
     });
 };
