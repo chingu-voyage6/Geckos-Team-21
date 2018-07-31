@@ -41,6 +41,12 @@ const ItemsFilters = (props) => (
             <option value="price">Price</option>
             <option value="expiration-price">expiration date</option>
         </select>
+        <button onClick ={() => {
+            props.dispatch(setTextFilter(''));
+            props.dispatch(setCountryFilter(''));
+            props.dispatch(setCityFilter(''));
+            props.dispatch(setSortByDate());
+        }}>clear all</button>
     </div>
 );
 
