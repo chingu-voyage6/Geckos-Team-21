@@ -6,7 +6,7 @@ import Banner from "./Banner";
 
 const Header = (props) => (
   <div className="Header">
-    <Navbar user={this.props.username} />
+    <Navbar user={props.username} />
     <Banner />
   </div>
 );
