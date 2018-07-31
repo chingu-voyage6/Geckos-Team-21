@@ -1,7 +1,7 @@
 import React from 'react';
 import {hot} from "react-hot-loader";
 import { connect } from 'react-redux';
-import {setTextFilter, setSortByDate, setSortByPrice, setCountryFilter, setCityFilter} from '../../../actions/filters';
+import {setTextFilter, setSortByDate, setSortByPrice, setCountryFilter, setCityFilter,setSortByCreationDate, setSortByExpirationDate} from '../../../actions/filters';
 
 const ItemsFilters = (props) => (
     <div className="items-filter">
