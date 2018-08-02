@@ -1,5 +1,5 @@
 import uuid from 'uuid';
-import img from '../components/main/Items-block/file.jpg';
+import img from '../components/main/Items-block/file.png';
 
 // ADD_ITEM
 export const addItem = (
