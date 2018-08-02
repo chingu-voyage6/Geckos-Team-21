@@ -6,7 +6,7 @@ import getVisibleItems from '../../../selectors/visibleItems';
 const ItemsList = (props) => (
     <div className="items-list">
         {props.items.map((item) => {
-        return <Item key = {item.id} {...item}/>
+        return <Item key = {item.id} {...item} />
         })}
     </div>
 );

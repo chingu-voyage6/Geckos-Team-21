@@ -11,12 +11,21 @@ import './styles/styles.scss';
  ////////////////////////////////////////////////
 const store = configureStore();
 
-store.dispatch(addItem({title: 'rug', price: 100, category: 'furniture'}));
-store.dispatch(addItem({title: 'lamp', price: 300, category: 'furniture'}));
-store.dispatch(addItem({title: 'spagetti', price: 200, category: 'food'}));
-store.dispatch(addItem({title: 'an old movie', price: 600, category: 'movies'}));
-store.dispatch(addItem({title: 'an old bike', price: 800, category: 'bikes'}));
+  	fetch('/api/getItems', {credentials: "include"})
+      .then( function(response) {
+        return response.json();
+      })
+      .then((responseJson) => {        
+        if (responseJson) {          
+        for (var i=0; i < responseJson.length; i++) {          
+          store.dispatch(addItem(responseJson[i]));
+        }
+      }
 
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
 
 const state = store.getState();
 

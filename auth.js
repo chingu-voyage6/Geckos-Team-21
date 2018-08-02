@@ -1,6 +1,7 @@
 const passport      = require('passport');
 const session       = require('express-session');
 const LocalStrategy = require('passport-local');
+var MemoryStore     = require('memorystore')(session);
 //const bcrypt        = require('bcrypt');
 
 
@@ -11,8 +12,12 @@ module.exports = function(app, db) {
 		secret: 'SacredCow',
 		resave: true,
 		saveUninitialized: true,
+		store: new MemoryStore({
+                   checkPeriod: 86400000}),
 		}
 		));
+
+	
 
 	app.use(passport.initialize());
 	app.use(passport.session());

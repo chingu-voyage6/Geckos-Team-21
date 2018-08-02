@@ -44,6 +44,17 @@ module.exports = function(app, db) {
 
 		res.json({'username': req.user[0].fname});		
 	})
+
+	app.route('/api/getItems').get(function(req,res) {
+
+		db.query('SELECT * FROM items', function(err, result, fields) {	
+			for (var j=0; j < result.length; j++) {
+					result[j].photos = result[j].photos.split(";");
+				}					
+					
+			res.json(result);
+		})
+	});
 	
 	// LOGIN ------------------------------------------------------------------------------------------------
 
@@ -52,11 +63,18 @@ module.exports = function(app, db) {
 		res.redirect('/'); 
 	})
 
+	// LOGOUT ------------------------------------------------------------------------------------------------
+
+	  app.route('/api/logout').get(function(req, res) {
+	  	console.log('User logout');
+    	req.logout();    	
+    	res.redirect('/');
+  })
+
 	// REGISTER-----------------------------------------------------------------------------------------------
 
 	
-	app.route('/api/register').post(function(req,res) {
-		db.connect(function(err) {
+	app.route('/api/register').post(function(req,res) {	
 			
 			if (err) {				
 				return console.log('Error to connect: ' + err);				
@@ -65,7 +83,7 @@ module.exports = function(app, db) {
 			db.query("SELECT * FROM users WHERE email = (?)", req.body.email, function(err,result,fields) {
     		if (err) {
     			console.log('Error to SELECT by email: ' + err);
-    			return done(err);
+    			res.redirect('/register');
     		}
     		console.log(result);
 
@@ -73,24 +91,19 @@ module.exports = function(app, db) {
     			console.log("User with id=" + result[0].id + " attempted to register once again");    			
     			res.redirect('/register');
     		}
-
     		else {
 			var query = "INSERT INTO users SET ?";			
 			var values = req.body;
 			values.tel = parseInt(values.tel);			
 			db.query(query, values, function(err, result) {
-				if (err) {
-				db.end();
+				if (err) {				
 				return console.log('Error to insert into users: ' + err);				
 				}				
 				res.redirect('/login');
 				return console.log('Result: ' + result.affectedRows);
 			});
 		}
-
-		});
-		});
-				
+		});				
 	});
 
 	// Add item -----------------------------------------------------------------------------------------------------------
@@ -106,17 +119,18 @@ module.exports = function(app, db) {
 		upload(req, res, function(err) {
 			if (err) {console.log("Error to download: " + err);}
 			else {
-				req.body.photos = JSON.stringify(req.files);
+				var photos = '';
+				for (var i=0; i < req.files.photos.length; i++) {
+					photos += req.files.photos[i].destination + '/' + req.files.photos[i].filename + ';';
+				}
+				req.body.photos = photos;
 				req.body.creationDate = new Date();
-				req.body.userID = req.user[0].id;
-
-				console.log(req.body);
+				req.body.userID = req.user[0].id;				
 				var query = "INSERT INTO items SET ?";			
 				var values = req.body;
 
 				db.query(query, values, function(err, result) {
-				if (err) {
-				db.end();
+				if (err) {				
 				return console.log('Error to insert into items: ' + err);				
 				}
 				req.session.save(function(err) {
@@ -124,19 +138,12 @@ module.exports = function(app, db) {
 					return console.log("Session saved");
 				});				
 				res.redirect('/');
-				return console.log('Result: ' + result.affectedRows);
+				return console.log('Item added');
 			});
 				
 			}
 		})
 	});
-
-	app.route('/api/getItems').get(function(req,res) {
-
-		db.query('SELECT * FROM items', function(err, result, fields) {
-			console.log(result);
-			res.json(result);
-		})
-	});
+	
 
 }
