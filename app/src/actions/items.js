@@ -1,4 +1,5 @@
 import uuid from 'uuid';
+import img from '../components/main/Items-block/file.jpg';
 
 // ADD_ITEM
 export const addItem = (
@@ -11,7 +12,7 @@ export const addItem = (
     description = '',
     expDate = 0,
     phoneNumber = 0,
-    photo = ''
+    photo = img
   } = {}
 ) => (
   {
