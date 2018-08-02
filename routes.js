@@ -59,7 +59,7 @@ module.exports = function(app, db) {
 	// LOGIN ------------------------------------------------------------------------------------------------
 
 	
-	app.route('/api/login').post(passport.authenticate('local', { failureRedirect: '/' }), function(req,res) {
+	app.route('/api/login').post(passport.authenticate('local', { failureRedirect: '/login' }), function(req,res) {
 		res.redirect('/'); 
 	})
 
@@ -76,10 +76,7 @@ module.exports = function(app, db) {
 	
 	app.route('/api/register').post(function(req,res) {	
 			
-			if (err) {				
-				return console.log('Error to connect: ' + err);				
-			}
-
+			
 			db.query("SELECT * FROM users WHERE email = (?)", req.body.email, function(err,result,fields) {
     		if (err) {
     			console.log('Error to SELECT by email: ' + err);
