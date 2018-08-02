@@ -1,12 +1,14 @@
 import React from 'react';
-import img from './file.jpg';
+import {hot} from "react-hot-loader";
+import { Link } from 'react-router-dom';
+//import img from './file.jpg';
 
-const Item = ({title, price, photo}) => (
+const Item = ({id, title, price, photo}) => (
     <div className="item-card">
         <h1>{title}</h1>
-         <img src={img} alt="" /> 
-        <p>Price: {price} <a className="item-link" href="#">details</a></p>
+        <img src={photo} alt="" /> 
+        <p>Price: {price} <Link to={`/item/${id}`} key={id} className="item-link">details</Link></p>
     </div>
 );
 
-export default Item;
+export default hot(module)(Item);
