@@ -11,11 +11,26 @@ export const setTextFilter = (text = '') => (
         text
     }
 );
-
-//SET_SORT_BY_DATE
-export const setSortByDate = () => (
+//SET_COUNTRY_FILTER
+export const setCountryFilter = (country ='') => (
     {
-        type: 'SET_SORT_BY_DATE'
+        type: 'SET_COUNTRY_FILTER',
+        country
+    }
+);
+
+//SET_CITY_FILTER
+export const setCityFilter = (city = '') => (
+    {
+        type: 'SET_CITY_FILTER',
+        city
+    }
+)
+
+//SET_SORT_BY_EXPITRATIONDATE
+export const setSortByExpirationDate = () => (
+    {
+        type: 'SET_SORT_BY_EXPIRATION_DATE'
     }
 );
 
@@ -26,8 +41,9 @@ export const setSortByPrice = () => (
     }
 );
 
-//SET_EXPIRATION_DATE
-//export const setExpirationDate = (expDate) => ({
-//     type: 'SET_EXPIRATION_DATE',
-//     expDate
-// });
+//SET_SORT_BY_CREATIONDATE
+export const setSortByCreationDate = () => (
+    {
+        type: 'SET_SORT_BY_CREATION_DATE'
+    }
+);

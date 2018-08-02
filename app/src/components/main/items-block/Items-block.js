@@ -7,6 +7,7 @@ import {addItem} from '../../../actions/items';
 
 const store = configureStore();
 
+<<<<<<< HEAD
 class ItemsBlock extends Component {
     constructor(props){
         super(props);        
@@ -26,5 +27,13 @@ ItemsBlock.defaultProps = {
     src: '#',
     itemDetails: 'detail'
 };
+=======
+const ItemsBlock = () => (
+    <div>
+        <ItemsFilters />
+        <ItemsList />
+    </div>
+)
+>>>>>>> 8f44b46aa9dd986a115cfe8558f075390dbbff5a
 
 export default hot(module)(ItemsBlock);

@@ -1,0 +1,37 @@
+.item-details{
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 30px;
+	margin: 10px;
+	div{
+		width: 100%;
+	}
+}
+.item-details__photo img{
+	width: 80%;
+	
+}
+table, th , td{
+	border-bottom: 1px solid #cccbcb;
+	padding: 25px 0;
+	text-align: left;
+}
+th{
+	color: #525253;
+}
+table{
+	width: 80%;
+	border-collapse: collapse;
+}
+@media (min-width: 768px){
+	.item-details{
+		flex-direction: row;
+		justify-content: space-around;
+		div{
+			width: 40%;
+		}
+	}
+}
