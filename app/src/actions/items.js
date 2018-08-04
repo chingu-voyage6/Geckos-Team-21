@@ -12,7 +12,8 @@ export const addItem = (
     description = '',
     expDate = 0,
     phoneNumber = 0,
-    photo = img
+    photo = img,
+    creationDate = 0
   } = {}
 ) => (
   {
@@ -27,7 +28,8 @@ export const addItem = (
       description,
       expDate,
       phoneNumber,
-      photo
+      photo,
+      creationDate
     }
   }
 );

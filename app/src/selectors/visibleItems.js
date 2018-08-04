@@ -1,6 +1,6 @@
 // get visible items
 
-const getVisibleItems = (items, {category, text, country, city, sortBy }) => {
+const getVisibleItems = (items, {category, text, country, city, sortBy, creationDate }) => {
     return items.filter((item) => {
         const categoryMatch =  category !== ''? item.category.toLowerCase() === category.toLowerCase(): true;
         const textMatch = item.title.toLowerCase().includes(text.toLowerCase());
