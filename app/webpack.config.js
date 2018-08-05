@@ -1,5 +1,8 @@
-const path = require("path");
-const webpack = require("webpack");
+const path      = require("path");
+const webpack   = require("webpack");
+var port        = process.env.PORT;
+var nport       = process.env.NODE_PORT;
+
 
 module.exports = {
   entry: "./src/index.js",
@@ -26,11 +29,7 @@ module.exports = {
           }
         ]
       }
-      // ,
-      // {
-      //   test: /\.(gif|jpe?g|png|ico)$/,
-      //   loader: 'url-loader?limit=10000'
-      // }
+       
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
@@ -41,13 +40,14 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    disableHostCheck: true,
     contentBase: path.join(__dirname, "views/"),
-    port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
+    port: port,
+    publicPath: 'http://localhost:' + port +'/dist/',
     hotOnly: true,
     proxy: {
     '/api': { 
-      target: 'http://localhost:5000/',
+      target: 'http://localhost:' + nport + '/',
       secure: false}    
     }   
   },

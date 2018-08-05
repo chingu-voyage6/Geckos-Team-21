@@ -8,6 +8,7 @@ const ItemsBlock = () => (
         <ItemsFilters />
         <ItemsList />
     </div>
-)
+);
+
 
 export default hot(module)(ItemsBlock);

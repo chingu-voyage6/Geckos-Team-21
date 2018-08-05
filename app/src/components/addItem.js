@@ -6,7 +6,7 @@ import {addItem} from '../actions/items';
 class addNewItem extends Component{
   constructor(props) {
 		super(props); 
-		this.state={
+		/*this.state={
 			title: '',
 			category: 'Games',
 			country: '',
@@ -17,9 +17,9 @@ class addNewItem extends Component{
 			tel :''
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);*/
   }
-  
+  /*
   handleInputChange(e){
 		const target = e.target
 		this.setState(() => ({
@@ -29,10 +29,9 @@ class addNewItem extends Component{
 
   handleSubmit(e){
 	e.preventDefault();
-	this.props.dispatch(addItem({...this.state}));
-	this.props.history.push('/');
+	this.props.dispatch(addItem({...this.state}));	
   }
-
+*/
   render(){
   	let categories = ["Games", "Movies", "Books", "Magazines", "Clothes", "Food", "Furniture", "Bikes", "Weird things"];
   	const selectFields = categories.map(function(cat) {
@@ -41,42 +40,33 @@ class addNewItem extends Component{
     return(
       <div className="form">  
 				<h1>add a new item</h1>      
-				<form encType="multipart/form-data"  method="POST" action="/api/addItem"
-				onSubmit={this.handleSubmit}>
+				<form encType="multipart/form-data"  method="POST" action="/api/addItem">
 				
 					<label htmlFor="title">Title:</label>
-					<input type="text" name="title" id="title" value={this.state.title} 
-					onChange={this.handleInputChange} />
+					<input type="text" name="title" id="title" />
 
 					<label htmlFor="category">Choose category:</label>
-					<select  name="category" id="category" value={this.state.category}  
-					onChange={this.handleInputChange}>
+					<select  name="category" id="category" >
 						{ selectFields }
 					</select>
 
 					<label htmlFor="country">Country:</label>
-					<input type="text" name="country" id="country" value={this.state.country} 
-					onChange={this.handleInputChange}/>
+					<input type="text" name="country" id="country" />
 
 					<label htmlFor="city">City:</label>
-					<input type="text" name="city" id="city" value={this.state.city}  
-					onChange={this.handleInputChange} />
+					<input type="text" name="city" id="city" />
 
 					<label htmlFor="description">Description:</label>
-					<textarea name="description" id="description" rows="5" value={this.state.description} 
-					onChange={this.handleInputChange}></textarea>
+					<textarea name="description" id="description" rows="5"></textarea>
 
 					<label htmlFor="expirationDate">Expiration date:</label>
-					<input type="date" name="expirationDate" id="expirationDate" value={this.state.expirationdate}  
-					onChange={this.handleInputChange} />
+					<input type="date" name="expirationDate" id="expirationDate" />
 
 					<label htmlFor="price">Price:</label>
-					<input type="text" name="price" id="price" value={this.state.price}  
-					onChange={this.handleInputChange} />
+					<input type="text" name="price" id="price" />
 
 					<label htmlFor="tel">Phone number:</label>
-					<input type="tel" name="tel" id="tel" value={this.state.tel} 
-					onChange={this.handleInputChange}/>
+					<input type="tel" name="tel" id="tel" />
 
 
 					<label htmlFor="photos">Photos:</label>
@@ -90,4 +80,4 @@ class addNewItem extends Component{
   }
 }
 
-export default connect()(addNewItem);
+export default hot(module)(addNewItem);

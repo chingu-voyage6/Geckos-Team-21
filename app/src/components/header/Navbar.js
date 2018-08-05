@@ -8,29 +8,47 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 class Navbar extends Component{
     constructor(props) {
         super(props);
+        this.logout = this.logout.bind(this);
         this.handleClick= this.handleClick.bind(this);
-  }
+    }
     handleClick(){
         let dropDown = document.querySelector('.dropdown');
         dropDown.classList.contains('dropdown-active')?
         dropDown.classList.remove('dropdown-active'):
         dropDown.classList.add('dropdown-active');
+    }    
+  
+
+    pass() {}
+
+    logout() {
+        console.log('Starting logout');        
+        fetch('/api/logout', {credentials: "include"}).then(function(response) {
+        return response;
+      }).then(function(response) {
+
+      });
+        this.props.user = '';
     }
+   
+
     render(){
 
-        let pages = [['login', '/login'], ['Sign up', '/register'], ['post an ad', '/addNewItem'], ['categories', '#'], ['about', '#'], ['home', '#']];
-        if (this.props.user !== '') {
-            pages[0][0] = "Hello " + this.props.user;
-            pages[0][1] = "#";
-            pages[1][0] = "Add item";
-            pages[1][1] = "/addNewItem";
+        var pages = [['login', '/login', this.pass], ['Sign up', '/register', this.pass]];
 
-        }
-        const navLinks = pages.map((page) => {
+        if (this.props.user !== '') {
+            pages = [['Hello ' + this.props.user , '#', this.pass], ['Add Item', '/addNewItem', this.pass], ['Logout', '#', this.logout]];
+
+        } else {
+            pages = [['login', '/login', this.pass], ['Sign up', '/register', this.pass]];
+        }      
+
+            var navLinks = pages.map((page) => {
             return(
-                <Link className="navbar-link" to={page[1]} key={pages.indexOf(page)}>{page[0]}</Link>
-            )
-        });
+                <Link className="navbar-link" to={page[1]} key={pages.indexOf(page)} onClick={page[2]}>{page[0]}</Link>
+            );
+        });        
+    
 
         return(
             <div>
