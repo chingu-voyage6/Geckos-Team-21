@@ -7,7 +7,7 @@ import Banner from "./Banner";
 const Header = (props) => (
   <div className="Header">
     <Navbar user={props.username} />
-    <Banner />
+    {/* <Banner /> */}
   </div>
 );
 export default hot(module)(Header);
