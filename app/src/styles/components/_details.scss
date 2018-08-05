@@ -4,8 +4,8 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 30px;
-	margin: 10px;
+	padding: 3rem;
+	margin: 1rem;
 	div{
 		width: 100%;
 	}
@@ -26,7 +26,7 @@ table{
 	width: 80%;
 	border-collapse: collapse;
 }
-@media (min-width: 768px){
+@media (min-width: $tablet){
 	.item-details{
 		flex-direction: row;
 		justify-content: space-around;

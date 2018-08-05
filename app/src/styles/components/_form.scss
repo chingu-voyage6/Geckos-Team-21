@@ -1,13 +1,6 @@
-*,
-*::before,
-*::after{
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
 .form{
 	width: 96%;
-	margin: 50px auto;
+	margin: 5rem auto;
 	padding: 0;
 	border: 1px solid #cccbcb;
 	border-radius: 4px;
@@ -18,12 +11,13 @@
 		margin: 0;
 		border-radius: 4px 4px 0 0;
 		color: #525253;
+		font-size: 25px;
 	}
 	form{
 		display: flex;
 		flex-direction: column;
 		width: 85%;
-		margin: 25px auto 10px;
+		margin: 2.5rem auto 1rem;
 		label{
 			margin-bottom: 10px;
 			margin-top: 15px;
@@ -33,7 +27,7 @@
 		select,
 		textarea {
 			border: 1px solid #cccbcb;
-			padding: 15px;
+			padding: 1.5rem;
 			background-color: #f7f7f7;
 			border-radius: 4px;
 		}
@@ -41,7 +35,7 @@
 			background: darkred;
 			color: #fff;
 			font-weight: bold;
-			margin-top: 30px;
+			margin-top: 3rem;
 			cursor: pointer;
 			&:hover{
 				opacity: 0.8;
@@ -51,9 +45,9 @@
 }
 
 
-@media (min-width: 600px){
+@media (min-width: $tablet){
 	.form{
-		width: 530px;
-		margin: 100px auto;
+		width: 53rem;
+		margin: 10rem auto;
 	}
 }

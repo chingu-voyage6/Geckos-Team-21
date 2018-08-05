@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    outline: 0;
+}
+html{
+    font-size: 62.5%; //16px => 10px
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+$mobile: 48rem;
+$tablet: 76rem;
+$laptop: 102.4rem;
