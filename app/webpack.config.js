@@ -3,10 +3,8 @@ const webpack   = require("webpack");
 var port        = process.env.PORT;
 var nport       = process.env.NODE_PORT;
 
-
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",  
+  entry: "./src/index.js",  
   module: {
     rules: [
       {
