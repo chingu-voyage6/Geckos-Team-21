@@ -45,31 +45,38 @@ class addNewItem extends Component{
 				onSubmit={this.handleSubmit}>
 				
 					<label htmlFor="title">Title:</label>
-					<input type="text" name="title" id="title" value={this.state.title} onChange={this.handleInputChange} />
+					<input type="text" name="title" id="title" value={this.state.title} 
+					onChange={this.handleInputChange} />
 
 					<label htmlFor="category">Choose category:</label>
-					<select  name="category" id="category" value={this.state.category}  onChange={this.handleInputChange}>
+					<select  name="category" id="category" value={this.state.category}  
+					onChange={this.handleInputChange}>
 						{ selectFields }
 					</select>
 
 					<label htmlFor="country">Country:</label>
-					<input type="text" name="country" id="country" value={this.state.country} onChange={this.handleInputChange}/>
+					<input type="text" name="country" id="country" value={this.state.country} 
+					onChange={this.handleInputChange}/>
 
 					<label htmlFor="city">City:</label>
-					<input type="text" name="city" id="city" value={this.state.city}  onChange={this.handleInputChange} />
+					<input type="text" name="city" id="city" value={this.state.city}  
+					onChange={this.handleInputChange} />
 
 					<label htmlFor="description">Description:</label>
 					<textarea name="description" id="description" rows="5" value={this.state.description} 
 					onChange={this.handleInputChange}></textarea>
 
 					<label htmlFor="expirationDate">Expiration date:</label>
-					<input type="date" name="expirationDate" id="expirationDate" value={this.state.expirationdate}  onChange={this.handleInputChange} />
+					<input type="date" name="expirationDate" id="expirationDate" value={this.state.expirationdate}  
+					onChange={this.handleInputChange} />
 
 					<label htmlFor="price">Price:</label>
-					<input type="text" name="price" id="price" value={this.state.price}  onChange={this.handleInputChange} />
+					<input type="text" name="price" id="price" value={this.state.price}  
+					onChange={this.handleInputChange} />
 
 					<label htmlFor="tel">Phone number:</label>
-					<input type="tel" name="tel" id="tel" value={this.state.tel} onChange={this.handleInputChange}/>
+					<input type="tel" name="tel" id="tel" value={this.state.tel} 
+					onChange={this.handleInputChange}/>
 
 
 					<label htmlFor="photos">Photos:</label>
