@@ -1,8 +1,8 @@
 import React, { Component} from "react";
 import {hot} from "react-hot-loader";
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 // navbar component
 class Navbar extends Component{
@@ -55,7 +55,7 @@ class Navbar extends Component{
                 <div className="navbar laptop-navbar">
                 { navLinks }            
                 </div>
-                <div className ="navbar mobile-navbar">
+                {/* <div className ="navbar mobile-navbar">
                     {navLinks[0]}
                     {navLinks[1]}
                     <button className="bars" onClick={this.handleClick}>
@@ -67,7 +67,7 @@ class Navbar extends Component{
                     {navLinks[4]}
                     {navLinks[5]}
                 </div>
-                </div>
+                </div> */}
                 
             </div>
         )
