@@ -42,6 +42,7 @@ module.exports = {
     contentBase: path.join(__dirname, "views/"),
     port: port,
     publicPath: 'http://localhost:' + port +'/dist/',
+    host: '0.0.0.0',
     hotOnly: true,
     proxy: {
     '/api': { 
