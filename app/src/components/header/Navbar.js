@@ -53,6 +53,7 @@ class Navbar extends Component{
         return(
             <div>
                 <div className="navbar laptop-navbar">
+                <h1>give <span>away</span></h1>
                 { navLinks }            
                 </div>
                 {/* <div className ="navbar mobile-navbar">
