@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 const Item = ({id, title, country, city, price, photos}) => (
     <div className="item-card">
-        <h1>{title}</h1>
         <h2>{title}</h2>
         <p>{country},{city}</p>        	
         <img src={"api/image/" + photos[0]} alt="" /> 
