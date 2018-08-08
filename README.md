@@ -10,14 +10,14 @@ Chingu Voyage-6 | https://chingu.io/
 * React
 * NodeJs
 
-Deployment on Heroku.
+Live Link: https://impossible-fang.glitch.me/
 
 ### MVP - Goals
 |Frontend Goals|Status|
 |---|----|
 |Build a main page|In progress|
-|Build modals for About and Login|Not yet started|
-|Build a dedicated page for at least one category|Not yet started|
+|Build pages for add new item, Sign up and Login |done|
+|Build Filter an sorting sections|done|
 
 |Backend Goals|Status|
 |---|----|
@@ -35,6 +35,6 @@ Deployment on Heroku.
 ### Contributer
 |Name|Role|Location|Timezone|
 | ------ | ------ | ------ | ------ |
-|Zoey| PM / Frontend dev | Iran| UTC 4.30|
+|Zeinab Rezaee| PM / Frontend dev | Iran| UTC 4.30|
 |Sergey| Backend dev |Russia|UTC +3|
 |Marco| db dev |Italy|UTC +2|
