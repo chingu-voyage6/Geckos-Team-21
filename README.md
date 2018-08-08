@@ -8,6 +8,7 @@ Chingu Voyage-6 | https://chingu.io/
 * SQL
 * Express
 * React
+* Redux
 * NodeJs
 
 Live Link: https://impossible-fang.glitch.me/
