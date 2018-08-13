@@ -43,15 +43,15 @@ class addNewItem extends Component{
 				<form encType="multipart/form-data"  method="POST" action="/api/addItem">
 				
 					<label htmlFor="title">Title:</label>
-					<input type="text" name="title" id="title" />
+					<input type="text" name="title" id="title" required/>
 
 					<label htmlFor="category">Choose category:</label>
-					<select  name="category" id="category" >
+					<select  name="category" id="category" required>
 						{ selectFields }
 					</select>
 
 					<label htmlFor="country">Country:</label>
-					<input type="text" name="country" id="country" />
+					<input type="text" name="country" id="country" required />
 
 					<label htmlFor="city">City:</label>
 					<input type="text" name="city" id="city" />
@@ -63,10 +63,10 @@ class addNewItem extends Component{
 					<input type="date" name="expirationDate" id="expirationDate" />
 
 					<label htmlFor="price">Price:</label>
-					<input type="text" name="price" id="price" />
+					<input type="text" name="price" id="price" required pattern="[0-9]*(\.[0-9]{0,2})?"/>
 
-					<label htmlFor="tel">Phone number:</label>
-					<input type="tel" name="tel" id="tel" />
+					<label htmlFor="tel">Phone number:</label> 
+					<input type="tel" name="tel" id="tel" required/>
 
 
 					<label htmlFor="photos">Photos:</label>

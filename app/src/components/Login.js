@@ -12,9 +12,9 @@ class Login extends Component{
           <h1>Login form</h1>        
           <form method="POST" action="/api/login">			
             <label htmlFor="e">Email:</label>
-            <input type="email" name="email" id="e" /><br />			
+            <input type="email" name="email" id="e" required/><br />			
             <label htmlFor="pass">Password:</label>
-            <input type="password" name="password" id="pass" /><br />
+            <input type="password" name="password" id="pass" required /><br />
             <input type="submit" value="Login" id="login" />
           </form>  
         </div>
