@@ -37,13 +37,16 @@ module.exports = function(app, db) {
 
 	// Render Home Page -----------------------------------------------------------------------------------------
 
+	app.route('/').get(function(req, res) {
+		res.sendFile(__dirname + '/app/views/index.html');		
+	});
 	
 	app.route('/api/user').get(ensureAuthenticated, function(req, res) {
 		console.log("Call /api/user");
 		console.log(req.user[0].fname);
 
 		res.json({'username': req.user[0].fname});		
-	})
+	});
 
 	app.route('/api/getItems').get(function(req,res) {
 
@@ -61,7 +64,7 @@ module.exports = function(app, db) {
 	
 	app.route('/api/login').post(passport.authenticate('local', { failureRedirect: '/login' }), function(req,res) {
 		res.redirect('/'); 
-	})
+	});
 
 	// LOGOUT ------------------------------------------------------------------------------------------------
 
@@ -69,7 +72,7 @@ module.exports = function(app, db) {
 	  	console.log('User logout');
     	req.logout();    	
     	res.redirect('/');
-  })
+  });
 
 	// REGISTER-----------------------------------------------------------------------------------------------
 
