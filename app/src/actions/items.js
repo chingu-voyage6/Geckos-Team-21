@@ -41,4 +41,23 @@ export const removeItem = ({id} = {}) => (
   }
 );
 
-//EDIT_ITEM
+export const getItems = () => {
+  return (dispatch) => {
+
+    fetch('/api/getItems', {credentials: "include"})
+      .then( function(response) {
+        return response.json();
+      })
+      .then((responseJson) => {        
+        if (responseJson) {          
+        for (var i=0; i < responseJson.length; i++) {          
+            dispatch(addItem(responseJson[i]));
+        }
+      }
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+
+  }
+};

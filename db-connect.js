@@ -4,16 +4,16 @@ var mysql      = require('mysql');
 console.log('Start working');
 
 
-var connection = mysql.createConnection({
-  host         : 'localhost',
-  port         : 3306,
-  user         : 'root',
-  password     : 'password',
-  insecureAuth : true,
-  database     : 'giveaway', 
-});
+// var connection = mysql.createConnection({
+//   host         : 'localhost',
+//   port         : 3306,
+//   user         : 'root',
+//   password     : 'password',
+//   insecureAuth : true,
+//   database     : 'giveaway', 
+// });
 
-/*
+
 var connection = mysql.createPool({
     connectionLimit : 10,
     host         : 'eu-cdbr-west-02.cleardb.net',
@@ -24,7 +24,7 @@ var connection = mysql.createPool({
     insecureAuth : true,
     database     : 'heroku_07776219d2261a0', 
 });
-*/
+
 
 module.exports = connection;
 
