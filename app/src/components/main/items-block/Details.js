@@ -40,7 +40,7 @@ const Details =(props) => {
 			</table>
 			</div>
 			<div className="item-details__photo">
-				<img src={props.item.photo}/>
+				<img src={props.item.photos}/>
 			</div>
         </div>
     );
